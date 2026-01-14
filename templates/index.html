@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card intro-card">
+    <h1>NetBrain Quiz</h1>
+    <p>Uji pengetahuan jaringanmu sekarang!</p>
+    <form action="{{ url_for('start') }}" method="post">
+        <input type="text" name="username" placeholder="Masukkan Nama Kamu..." required autofocus>
+        <button type="submit" class="btn-primary">Mulai Quiz</button>
+    </form>
+</div>
+{% endblock %}

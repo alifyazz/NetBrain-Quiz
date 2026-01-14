@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header">
+    <h2>Halo, {{ session['username'] }}!</h2>
+</div>
+
+<form action="{{ url_for('submit') }}" method="post" class="quiz-form">
+    {% for q in questions %}
+    <div class="card question-card">
+        <h3 class="question-title">{{ loop.index }}. {{ q.question }}</h3>
+        <div class="options">
+            {% for option in q.options %}
+            <label class="option-label">
+                <input type="radio" name="q-{{ q.id }}" value="{{ option }}" required>
+                <span>{{ option }}</span>
+            </label>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+    
+    <div class="action-area">
+        <button type="submit" class="btn-primary">Kirim Jawaban</button>
+    </div>
+</form>
+{% endblock %}

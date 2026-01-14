@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card result-card">
+    <div class="score-circle">
+        <span>{{ score }}</span>
+        <small>/ {{ total_score }}</small>
+    </div>
+    <h2>Hasil Kamu</h2>
+    <p>Selamat, <strong>{{ username }}</strong>!</p>
+    
+    <div class="actions">
+        <a href="{{ url_for('index') }}" class="btn-secondary">Main Lagi</a>
+    </div>
+</div>
+{% endblock %}
